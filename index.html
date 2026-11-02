@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
@@ -310,6 +310,7 @@
             overflow: hidden;
             cursor: pointer;
             group: 'gallery';
+            background: linear-gradient(135deg, #2a2a2a, #1a1a1a);
         }
 
         .gallery-item img {
@@ -319,7 +320,19 @@
             transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
-        .gallery-item:hover img {
+        .gallery-placeholder {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #ff6b6b 0%, #ff8787 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.6);
+            transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .gallery-item:hover .gallery-placeholder {
             transform: scale(1.1);
         }
 
@@ -397,8 +410,15 @@
         }
 
         .service-icon {
-            font-size: 48px;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #ff6b6b, #ff8787);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             margin-bottom: 20px;
+            font-size: 28px;
         }
 
         .service-card h3 {
@@ -435,7 +455,7 @@
             width: 180px;
             height: 180px;
             margin: 0 auto 25px;
-            border-radius: 50%;
+            border-radius: 12px;
             background: linear-gradient(135deg, #ff6b6b, #ff8787);
             display: flex;
             align-items: center;
@@ -622,6 +642,7 @@
             color: #ff6b6b;
             text-decoration: none;
             transition: all 0.3s;
+            font-size: 18px;
         }
 
         .social-links a:hover {
@@ -740,7 +761,7 @@
             <p class="section-subtitle">Confira alguns dos nossos trabalhos mais recentes</p>
             <div class="gallery-grid">
                 <div class="gallery-item">
-                    <div style="width: 100%; height: 100%; background: linear-gradient(135deg, #ff6b6b, #ff8787); display: flex; align-items: center; justify-content: center; font-size: 80px;">🐉</div>
+                    <div class="gallery-placeholder"></div>
                     <div class="gallery-overlay">
                         <div class="gallery-text">
                             <h3>Dragão Tribal</h3>
@@ -750,7 +771,7 @@
                 </div>
 
                 <div class="gallery-item">
-                    <div style="width: 100%; height: 100%; background: linear-gradient(135deg, #ff8787, #ffb3b3); display: flex; align-items: center; justify-content: center; font-size: 80px;">🦅</div>
+                    <div class="gallery-placeholder"></div>
                     <div class="gallery-overlay">
                         <div class="gallery-text">
                             <h3>Águia Realista</h3>
@@ -760,7 +781,7 @@
                 </div>
 
                 <div class="gallery-item">
-                    <div style="width: 100%; height: 100%; background: linear-gradient(135deg, #ff6b6b, #cc5555); display: flex; align-items: center; justify-content: center; font-size: 80px;">🌹</div>
+                    <div class="gallery-placeholder"></div>
                     <div class="gallery-overlay">
                         <div class="gallery-text">
                             <h3>Rosa com Espinhos</h3>
@@ -770,7 +791,7 @@
                 </div>
 
                 <div class="gallery-item">
-                    <div style="width: 100%; height: 100%; background: linear-gradient(135deg, #ff9999, #ffb3b3); display: flex; align-items: center; justify-content: center; font-size: 80px;">⚡</div>
+                    <div class="gallery-placeholder"></div>
                     <div class="gallery-overlay">
                         <div class="gallery-text">
                             <h3>Raio Abstrato</h3>
@@ -780,7 +801,7 @@
                 </div>
 
                 <div class="gallery-item">
-                    <div style="width: 100%; height: 100%; background: linear-gradient(135deg, #ff7777, #ff9999); display: flex; align-items: center; justify-content: center; font-size: 80px;">💀</div>
+                    <div class="gallery-placeholder"></div>
                     <div class="gallery-overlay">
                         <div class="gallery-text">
                             <h3>Caveira Old School</h3>
@@ -790,7 +811,7 @@
                 </div>
 
                 <div class="gallery-item">
-                    <div style="width: 100%; height: 100%; background: linear-gradient(135deg, #ff6b6b, #ff5252); display: flex; align-items: center; justify-content: center; font-size: 80px;">🦁</div>
+                    <div class="gallery-placeholder"></div>
                     <div class="gallery-overlay">
                         <div class="gallery-text">
                             <h3>Leão Majestic</h3>
@@ -800,7 +821,7 @@
                 </div>
 
                 <div class="gallery-item">
-                    <div style="width: 100%; height: 100%; background: linear-gradient(135deg, #ffb3b3, #ff8787); display: flex; align-items: center; justify-content: center; font-size: 80px;">🌙</div>
+                    <div class="gallery-placeholder"></div>
                     <div class="gallery-overlay">
                         <div class="gallery-text">
                             <h3>Lua e Estrelas</h3>
@@ -810,7 +831,7 @@
                 </div>
 
                 <div class="gallery-item">
-                    <div style="width: 100%; height: 100%; background: linear-gradient(135deg, #ff8787, #ff6b6b); display: flex; align-items: center; justify-content: center; font-size: 80px;">🗡️</div>
+                    <div class="gallery-placeholder"></div>
                     <div class="gallery-overlay">
                         <div class="gallery-text">
                             <h3>Espada Samurai</h3>
@@ -820,7 +841,7 @@
                 </div>
 
                 <div class="gallery-item">
-                    <div style="width: 100%; height: 100%; background: linear-gradient(135deg, #ff5252, #ff6b6b); display: flex; align-items: center; justify-content: center; font-size: 80px;">🔥</div>
+                    <div class="gallery-placeholder"></div>
                     <div class="gallery-overlay">
                         <div class="gallery-text">
                             <h3>Fogo e Chamas</h3>
@@ -839,12 +860,12 @@
             <p class="section-subtitle">Oferecemos os melhores serviços de tatuagem e piercing</p>
             <div class="services-grid">
                 <div class="service-card">
-                    <div class="service-icon">🎨</div>
+                    <div class="service-icon">✏️</div>
                     <h3>Tatuagens</h3>
                     <p>Designs personalizados criados especialmente para você. Desde esboços minimalistas até trabalhos complexos com alta definição e realismo.</p>
                 </div>
                 <div class="service-card">
-                    <div class="service-icon">💎</div>
+                    <div class="service-icon">💍</div>
                     <h3>Piercings</h3>
                     <p>Colocação segura de piercings com profissionais certificados. 100% esterilizado com materiais de alta qualidade e instrumentos descartáveis.</p>
                 </div>
@@ -864,19 +885,19 @@
             <p class="section-subtitle">Conheça a equipe de especialistas da Madeira Ink</p>
             <div class="team-grid">
                 <div class="team-member">
-                    <div class="team-member-avatar">🎯</div>
+                    <div class="team-member-avatar"></div>
                     <h3>Lucas Ferreira</h3>
                     <div class="role">Tatuador Master</div>
                     <p>Especialista em designs personalizados e técnicas inovadoras. Profissional dedicado a criar tatuagens únicas e memoráveis para cada cliente.</p>
                 </div>
                 <div class="team-member">
-                    <div class="team-member-avatar">💎</div>
+                    <div class="team-member-avatar"></div>
                     <h3>Renato</h3>
                     <div class="role">Body Piercer Expert</div>
                     <p>Mais de 6 anos de experiência em piercing body. Extremamente profissional, cuidadoso e respeitoso. Trabalha com materiais esterilizados e certificados.</p>
                 </div>
                 <div class="team-member">
-                    <div class="team-member-avatar">🔒</div>
+                    <div class="team-member-avatar"></div>
                     <h3>Lock</h3>
                     <div class="role">Tatuador Sênior</div>
                     <p>Artista versátil com trabalhos sensacionais em diversos estilos. Muito dedicado e atencioso com cada detalhe da tatuagem de seus clientes.</p>
