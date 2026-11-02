@@ -1,0 +1,974 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Madeira Ink - Tatuagem e Piercing em Porto Velho</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@300;400;500;600;700&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: #1a1a1a;
+            background-color: #0a0a0a;
+            overflow-x: hidden;
+        }
+
+        /* Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #1a1a1a;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #ff6b6b;
+            border-radius: 5px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #ff5252;
+        }
+
+        /* Header */
+        header {
+            background: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255, 107, 107, 0.2);
+        }
+
+        nav {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 40px;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 32px;
+            font-weight: 900;
+            background: linear-gradient(135deg, #ff6b6b, #ff8787);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: -1px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 50px;
+        }
+
+        nav a {
+            color: #e0e0e0;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 15px;
+            transition: color 0.3s;
+            position: relative;
+        }
+
+        nav a:after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, #ff6b6b, #ff8787);
+            transition: width 0.3s;
+        }
+
+        nav a:hover {
+            color: #ff6b6b;
+        }
+
+        nav a:hover:after {
+            width: 100%;
+        }
+
+        .cta-header {
+            background: linear-gradient(135deg, #ff6b6b, #ff8787);
+            color: white;
+            padding: 12px 28px;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
+        }
+
+        .cta-header:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 107, 107, 0.4);
+        }
+
+        /* Hero */
+        .hero {
+            position: relative;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(255, 107, 107, 0.15) 0%, transparent 70%);
+            top: -200px;
+            right: -200px;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(255, 107, 107, 0.1) 0%, transparent 70%);
+            bottom: -100px;
+            left: -100px;
+            animation: float 8s ease-in-out infinite reverse;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(30px); }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 10;
+            text-align: center;
+            max-width: 800px;
+            padding: 0 20px;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 72px;
+            font-weight: 900;
+            color: white;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero .subtitle {
+            font-size: 18px;
+            color: #b0b0b0;
+            margin-bottom: 40px;
+            font-weight: 300;
+            letter-spacing: 1px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 36px;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s;
+            cursor: pointer;
+            border: none;
+            font-size: 16px;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #ff6b6b, #ff8787);
+            color: white;
+            box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 25px rgba(255, 107, 107, 0.4);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid rgba(255, 107, 107, 0.5);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 107, 107, 0.1);
+            border-color: #ff6b6b;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        /* Sections */
+        section {
+            padding: 100px 0;
+            position: relative;
+        }
+
+        section h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 48px;
+            font-weight: 900;
+            text-align: center;
+            color: white;
+            margin-bottom: 20px;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: #b0b0b0;
+            font-size: 16px;
+            margin-bottom: 60px;
+            font-weight: 300;
+            letter-spacing: 1px;
+        }
+
+        /* Stats Section */
+        .stats {
+            background: linear-gradient(135deg, rgba(255, 107, 107, 0.05) 0%, rgba(255, 107, 107, 0.02) 100%);
+            border-top: 1px solid rgba(255, 107, 107, 0.1);
+            border-bottom: 1px solid rgba(255, 107, 107, 0.1);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 56px;
+            font-weight: 900;
+            background: linear-gradient(135deg, #ff6b6b, #ff8787);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .stat-label {
+            color: #b0b0b0;
+            font-size: 14px;
+            margin-top: 10px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 600;
+        }
+
+        /* Galeria de Tatuagens */
+        .gallery-section {
+            background: #0a0a0a;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 50px;
+        }
+
+        .gallery-item {
+            position: relative;
+            aspect-ratio: 1;
+            border-radius: 12px;
+            overflow: hidden;
+            cursor: pointer;
+            group: 'gallery';
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(255, 107, 107, 0.8) 0%, rgba(255, 136, 136, 0.6) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+
+        .gallery-text {
+            color: white;
+            text-align: center;
+        }
+
+        .gallery-text h3 {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .gallery-text p {
+            font-size: 14px;
+            opacity: 0.9;
+        }
+
+        /* Serviços */
+        .services {
+            background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .service-card {
+            background: linear-gradient(135deg, rgba(255, 107, 107, 0.05) 0%, rgba(255, 107, 107, 0.02) 100%);
+            padding: 40px;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 107, 107, 0.1);
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 107, 107, 0.1), transparent);
+            transition: left 0.5s;
+        }
+
+        .service-card:hover::before {
+            left: 100%;
+        }
+
+        .service-card:hover {
+            border-color: rgba(255, 107, 107, 0.3);
+            transform: translateY(-5px);
+        }
+
+        .service-icon {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .service-card h3 {
+            font-size: 24px;
+            color: white;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .service-card p {
+            color: #b0b0b0;
+            line-height: 1.8;
+            font-weight: 300;
+        }
+
+        /* Profissionais */
+        .team {
+            background: #0a0a0a;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .team-member {
+            text-align: center;
+            group: 'team';
+        }
+
+        .team-member-avatar {
+            width: 180px;
+            height: 180px;
+            margin: 0 auto 25px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #ff6b6b, #ff8787);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 72px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .team-member-avatar::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.3), transparent);
+            animation: shine 3s ease-in-out infinite;
+        }
+
+        @keyframes shine {
+            0%, 100% { opacity: 0; }
+            50% { opacity: 1; }
+        }
+
+        .team-member h3 {
+            font-size: 22px;
+            color: white;
+            margin-bottom: 8px;
+            font-weight: 700;
+        }
+
+        .team-member .role {
+            color: #ff6b6b;
+            font-weight: 600;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            font-size: 12px;
+            letter-spacing: 1px;
+        }
+
+        .team-member p {
+            color: #b0b0b0;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        /* Avaliações */
+        .reviews {
+            background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%);
+        }
+
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .review-card {
+            background: linear-gradient(135deg, rgba(255, 107, 107, 0.05) 0%, rgba(255, 107, 107, 0.02) 100%);
+            padding: 35px;
+            border-radius: 12px;
+            border-left: 4px solid #ff6b6b;
+            border: 1px solid rgba(255, 107, 107, 0.1);
+            border-left: 4px solid #ff6b6b;
+            transition: all 0.3s;
+        }
+
+        .review-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(255, 107, 107, 0.3);
+        }
+
+        .review-header {
+            margin-bottom: 18px;
+        }
+
+        .review-name {
+            font-weight: 700;
+            color: white;
+            font-size: 16px;
+            margin-bottom: 6px;
+        }
+
+        .review-stars {
+            color: #ff6b6b;
+            font-size: 14px;
+            letter-spacing: 2px;
+        }
+
+        .review-date {
+            font-size: 12px;
+            color: #666;
+            margin-top: 8px;
+        }
+
+        .review-text {
+            color: #b0b0b0;
+            line-height: 1.7;
+            font-weight: 300;
+        }
+
+        /* Informações */
+        .info-section {
+            background: linear-gradient(135deg, rgba(255, 107, 107, 0.1) 0%, rgba(255, 107, 107, 0.05) 100%);
+            border-top: 1px solid rgba(255, 107, 107, 0.2);
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+
+        .info-item h3 {
+            font-size: 20px;
+            color: #ff6b6b;
+            margin-bottom: 15px;
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 14px;
+            letter-spacing: 2px;
+        }
+
+        .info-item p {
+            color: #b0b0b0;
+            line-height: 1.8;
+            font-weight: 300;
+        }
+
+        .info-item a {
+            color: #ff6b6b;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .info-item a:hover {
+            color: #ff8787;
+        }
+
+        /* Footer */
+        footer {
+            background: #0a0a0a;
+            color: #b0b0b0;
+            padding: 60px 0 30px;
+            border-top: 1px solid rgba(255, 107, 107, 0.1);
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 18px;
+            font-size: 16px;
+            font-weight: 700;
+        }
+
+        .footer-col p {
+            font-size: 14px;
+            line-height: 1.8;
+            font-weight: 300;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 107, 107, 0.1);
+            border: 1px solid rgba(255, 107, 107, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #ff6b6b;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .social-links a:hover {
+            background: #ff6b6b;
+            color: white;
+            border-color: #ff6b6b;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 107, 107, 0.1);
+            font-size: 14px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav {
+                padding: 0 20px;
+            }
+
+            nav ul {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 48px;
+            }
+
+            .hero .subtitle {
+                font-size: 16px;
+            }
+
+            section {
+                padding: 60px 0;
+            }
+
+            section h2 {
+                font-size: 36px;
+            }
+
+            .container {
+                padding: 0 20px;
+            }
+
+            .gallery-grid,
+            .services-grid,
+            .team-grid,
+            .reviews-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .btn {
+                padding: 12px 24px;
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <div class="logo">MADEIRA INK</div>
+            <ul>
+                <li><a href="#galeria">Galeria</a></li>
+                <li><a href="#servicos">Serviços</a></li>
+                <li><a href="#profissionais">Profissionais</a></li>
+                <li><a href="#avaliacoes">Avaliações</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+            <a href="tel:+556999486921" class="cta-header">Agende Agora</a>
+        </nav>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>MADEIRA INK</h1>
+            <p class="subtitle">TATUAGENS E PIERCINGS DE EXCELÊNCIA</p>
+            <div class="hero-buttons">
+                <a href="tel:+556999486921" class="btn btn-primary">Agendar Sessão</a>
+                <a href="https://instagram.com/madeira.ink" class="btn btn-secondary">Nos Siga</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats -->
+    <section class="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-number">4.9</div>
+                    <div class="stat-label">Avaliação</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">408</div>
+                    <div class="stat-label">Reviews</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">15+</div>
+                    <div class="stat-label">Anos Exp.</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">100%</div>
+                    <div class="stat-label">Satisfação</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Galeria -->
+    <section class="gallery-section" id="galeria">
+        <div class="container">
+            <h2>Nossa Galeria</h2>
+            <p class="section-subtitle">Confira alguns dos nossos trabalhos mais recentes</p>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <div style="width: 100%; height: 100%; background: linear-gradient(135deg, #ff6b6b, #ff8787); display: flex; align-items: center; justify-content: center; font-size: 80px;">🐉</div>
+                    <div class="gallery-overlay">
+                        <div class="gallery-text">
+                            <h3>Dragão Tribal</h3>
+                            <p>Trabalho de Lucas Ferreira</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <div style="width: 100%; height: 100%; background: linear-gradient(135deg, #ff8787, #ffb3b3); display: flex; align-items: center; justify-content: center; font-size: 80px;">🦅</div>
+                    <div class="gallery-overlay">
+                        <div class="gallery-text">
+                            <h3>Águia Realista</h3>
+                            <p>Técnica de realismo</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <div style="width: 100%; height: 100%; background: linear-gradient(135deg, #ff6b6b, #cc5555); display: flex; align-items: center; justify-content: center; font-size: 80px;">🌹</div>
+                    <div class="gallery-overlay">
+                        <div class="gallery-text">
+                            <h3>Rosa com Espinhos</h3>
+                            <p>Design delicado</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <div style="width: 100%; height: 100%; background: linear-gradient(135deg, #ff9999, #ffb3b3); display: flex; align-items: center; justify-content: center; font-size: 80px;">⚡</div>
+                    <div class="gallery-overlay">
+                        <div class="gallery-text">
+                            <h3>Raio Abstrato</h3>
+                            <p>Trabalho de Lock</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <div style="width: 100%; height: 100%; background: linear-gradient(135deg, #ff7777, #ff9999); display: flex; align-items: center; justify-content: center; font-size: 80px;">💀</div>
+                    <div class="gallery-overlay">
+                        <div class="gallery-text">
+                            <h3>Caveira Old School</h3>
+                            <p>Estilo clássico</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <div style="width: 100%; height: 100%; background: linear-gradient(135deg, #ff6b6b, #ff5252); display: flex; align-items: center; justify-content: center; font-size: 80px;">🦁</div>
+                    <div class="gallery-overlay">
+                        <div class="gallery-text">
+                            <h3>Leão Majestic</h3>
+                            <p>Detalhe impressionante</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <div style="width: 100%; height: 100%; background: linear-gradient(135deg, #ffb3b3, #ff8787); display: flex; align-items: center; justify-content: center; font-size: 80px;">🌙</div>
+                    <div class="gallery-overlay">
+                        <div class="gallery-text">
+                            <h3>Lua e Estrelas</h3>
+                            <p>Design minimalista</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <div style="width: 100%; height: 100%; background: linear-gradient(135deg, #ff8787, #ff6b6b); display: flex; align-items: center; justify-content: center; font-size: 80px;">🗡️</div>
+                    <div class="gallery-overlay">
+                        <div class="gallery-text">
+                            <h3>Espada Samurai</h3>
+                            <p>Trabalho detalhado</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <div style="width: 100%; height: 100%; background: linear-gradient(135deg, #ff5252, #ff6b6b); display: flex; align-items: center; justify-content: center; font-size: 80px;">🔥</div>
+                    <div class="gallery-overlay">
+                        <div class="gallery-text">
+                            <h3>Fogo e Chamas</h3>
+                            <p>Técnica de sombreado</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Serviços -->
+    <section class="services" id="servicos">
+        <div class="container">
+            <h2>Nossos Serviços</h2>
+            <p class="section-subtitle">Oferecemos os melhores serviços de tatuagem e piercing</p>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">🎨</div>
+                    <h3>Tatuagens</h3>
+                    <p>Designs personalizados criados especialmente para você. Desde esboços minimalistas até trabalhos complexos com alta definição e realismo.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">💎</div>
+                    <h3>Piercings</h3>
+                    <p>Colocação segura de piercings com profissionais certificados. 100% esterilizado com materiais de alta qualidade e instrumentos descartáveis.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">✨</div>
+                    <h3>Joias Premium</h3>
+                    <p>Ampla variedade de joias de qualidade superior para piercings. Ouro, prata, aço cirúrgico e gemas de todos os estilos e tamanhos.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Profissionais -->
+    <section class="team" id="profissionais">
+        <div class="container">
+            <h2>Nossos Profissionais</h2>
+            <p class="section-subtitle">Conheça a equipe de especialistas da Madeira Ink</p>
+            <div class="team-grid">
+                <div class="team-member">
+                    <div class="team-member-avatar">🎯</div>
+                    <h3>Lucas Ferreira</h3>
+                    <div class="role">Tatuador Master</div>
+                    <p>Especialista em designs personalizados e técnicas inovadoras. Profissional dedicado a criar tatuagens únicas e memoráveis para cada cliente.</p>
+                </div>
+                <div class="team-member">
+                    <div class="team-member-avatar">💎</div>
+                    <h3>Renato</h3>
+                    <div class="role">Body Piercer Expert</div>
+                    <p>Mais de 6 anos de experiência em piercing body. Extremamente profissional, cuidadoso e respeitoso. Trabalha com materiais esterilizados e certificados.</p>
+                </div>
+                <div class="team-member">
+                    <div class="team-member-avatar">🔒</div>
+                    <h3>Lock</h3>
+                    <div class="role">Tatuador Sênior</div>
+                    <p>Artista versátil com trabalhos sensacionais em diversos estilos. Muito dedicado e atencioso com cada detalhe da tatuagem de seus clientes.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Avaliações -->
+    <section class="reviews" id="avaliacoes">
+        <div class="container">
+            <h2>O que Nossos Clientes Dizem</h2>
+            <p class="section-subtitle">Mais de 408 avaliações de clientes satisfeitos</p>
+            <div class="reviews-grid">
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="review-name">Haroldo Rodrigues Junior</div>
+                        <div class="review-stars">★★★★★</div>
+                    </div>
+                    <div class="review-date">há 1 mês</div>
+                    <p class="review-text">"Fui muito bem atendido, ambiente super agradável, o profissional Lock é muito dedicado, o trabalho ficou sensacional. Recomendo!"</p>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="review-name">Marcella Ignez</div>
+                        <div class="review-stars">★★★★★</div>
+                    </div>
+                    <div class="review-date">há 2 semanas</div>
+                    <p class="review-text">"Experiência maravilhosa! Renato é um excelente profissional. Desde 2020 faço meus furos com ele e nunca tive complicação. Recomendo de olhos fechados!"</p>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="review-name">Sara Gromann</div>
+                        <div class="review-stars">★★★★★</div>
+                    </div>
+                    <div class="review-date">há 2 meses</div>
+                    <p class="review-text">"Amei minha experiência no estúdio! O atendimento foi excelente desde o início, o ambiente é super agradável e passa muita confiança."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Informações -->
+    <section class="info-section" id="contato">
+        <div class="container">
+            <h2>Entre em Contato</h2>
+            <p class="section-subtitle">Localize-nos e agende sua sessão</p>
+            <div class="info-grid">
+                <div class="info-item">
+                    <h3>📍 Localização</h3>
+                    <p>R. João Pessoa, 387<br>Embratel, Porto Velho<br>RO, 76820-716</p>
+                </div>
+                <div class="info-item">
+                    <h3>🕐 Horários</h3>
+                    <p>Segunda a Sexta: 10:00 - 19:00<br>Sábado: 10:00 - 18:00<br>Domingo: Fechado</p>
+                </div>
+                <div class="info-item">
+                    <h3>📞 Contato</h3>
+                    <p><a href="tel:+556999486921">(69) 99948-6921</a><br><a href="https://instagram.com">@madeira.ink</a><br><a href="https://wa.me/556999486921">WhatsApp</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h4>Madeira Ink</h4>
+                    <p>Estúdio especializado em tatuagens e piercings em Porto Velho. Qualidade, profissionalismo e segurança em cada trabalho.</p>
+                    <div class="social-links">
+                        <a href="https://instagram.com" title="Instagram">📱</a>
+                        <a href="https://wa.me/556999486921" title="WhatsApp">💬</a>
+                        <a href="tel:+556999486921" title="Telefone">☎️</a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Links Rápidos</h4>
+                    <p><a href="#galeria" style="color: #b0b0b0; text-decoration: none;">→ Galeria</a><br><a href="#servicos" style="color: #b0b0b0; text-decoration: none;">→ Serviços</a><br><a href="#profissionais" style="color: #b0b0b0; text-decoration: none;">→ Profissionais</a><br><a href="#avaliacoes" style="color: #b0b0b0; text-decoration: none;">→ Avaliações</a></p>
+                </div>
+                <div class="footer-col">
+                    <h4>Horários</h4>
+                    <p>Segunda a Sexta<br>10:00 - 19:00<br><br>Sábado<br>10:00 - 18:00<br><br>Domingo: Fechado</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Madeira Ink Tattoo e Piercing. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
